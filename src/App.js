@@ -1,24 +1,57 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet
+
+} from "react-router-dom";
+import Navbar from "./components/pages/navbar"
+import Footer from "./components/pages/footer"
+import Home from "./components/pages/home"
+
+
+import { ThemeProvider} from "./components/pages/ThemeContext"
+
+
+
+
+const Layout = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+      <Navbar  />
+      <Outlet />
+      <Footer />
+    </>
+  )
+}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+
+
+      }
+     
+    ]
+  }
+ 
+]);
+
+function App() {
+  // const { isDarkMode } = useTheme();
+  
+  return (
+    <ThemeProvider>
+      <div  >
+      <RouterProvider router={router} />
     </div>
+    </ThemeProvider >
   );
 }
 
