@@ -8,9 +8,9 @@ import { useTheme} from './ThemeContext'
 const Home = () => {
   const { isDarkMode } = useTheme();
 
- const card =[ {name:"Kingsley Chukwubuike",img:"john", course:"Figma To React",time:"Oct 1, 2023", hour:"1hr"},{name:"Kingsley Chukwubuike",img:"john",course:"MYSQL Tutorials",time:"Oct 1, 2023",hour:"1hr"},{name:"Kingsley Chukwubuike",img:"john",course:"JavaScript Tutorials", time:"Oct 1, 2023",hour:"1hr"}]
- const card2 =[ {name:"Kingsley Chukwubuike",img:"john",project:"Ecommerce Project"},{name:"Kingsley Chukwubuike",img:"john",project:"Gaming Projects"},{name:"kingsley Chukwubuike",img:"john",project:"Sales Record Project"}]
- const card1 =[ {name:"Chukwubuke K.",img:"john"},{name:"Chukwubuike K.",img:"john"},{name:"chukwubuike K.",img:"john"},{name:"Chukwubuike K.",img:"john"}]
+ const card =[ {name:"Kingsley Chukwubuike",img:"/img/bgf.svg", course:"Figma To React",time:"Oct 1, 2023", button:"Preview" ,price:"$15"},{name:"Kingsley Chukwubuike",img:"/img/bgf.svg",course:"MYSQL Tutorials",time:"Oct 1, 2023",button:"Preview",price:"$20"},{name:"Kingsley Chukwubuike",img:"/img/bgf.svg",course:"JavaScript Tutorials", time:"Oct 1, 2023",button:"Preview",price:"$15"}]
+ const card2 =[ {name:"Kingsley Chukwubuike",img:"john",project:"Portfolio Project", button:"Preview" ,price:"$30"},{name:"Kingsley Chukwubuike",img:"john",project:"Gaming Projects", button:"Preview" ,price:"$120"},{name:"kingsley Chukwubuike",img:"john",project:"Investment Project", button:"Preview" ,price:"$100"}]
+ const card1 =[ {name:"Chukwubuke K.",img:"/img/bgf.svg",course:"HTML/CSS", button:"Preview" ,price:"$15"},{name:"Chukwubuike K.",img:"/img/bgf.svg",course:"JavaScript",button:"Preview",price:"$20"},{name:"chukwubuike K.",img:"/img/bgf.svg",course:"React",button:"Preview",price:"$25"},{name:"Chukwubuike K.",img:"/img/bgf.svg",course:"Nodejs",button:"preview",price:"$25"},{name:"Chukwubuike K.",img:"/img/bgf.svg",course:"MySql",button:'Preview',price:"$20"},{name:"Chukwubuike K.",img:"/img/bgf.svg",course:"Python",button:'Preview',price:"$25"},{name:"Chukwubuike K.",img:"/img/bgf.svg",course:"ExpressJs",button:"Preview",price:"$20"},{name:"Chukwubuike K.",img:"/img/bgf.svg",course:"Figma",button:"Preview",price:"$15"}]
   return (
     <div >
 
@@ -47,7 +47,7 @@ const Home = () => {
         <div className="tou">
         <div className="TrendingCourses">Latest Courses </div>
         <div className="MostPopular">
-        <p className="Checkout">Check out the most popular courses from our expert authors. </p>
+        <p className="Checkout">Discover our most Latest courses today </p>
         <div className="viewMoreButton">view more</div>
         </div>
         </div>
@@ -56,12 +56,13 @@ const Home = () => {
           {card.map((app,id)=>(
           <div className="cardDivWithImg" key={id}>
            <div className="ImgDivGenerator"> <img src="/img/bkm.png" alt="" className="divImg"/></div>
-            <p className="WhatIs">{app.course}</p>
-            <p className="">by <span className='nameText'>{app.name}</span></p>
+             <p className='skillPath'>SKILL PATH</p>
+            <p className="WhatIs landL5">{app.course}</p>
+            {/* <p className=""><span className='nameText'>{app.name}</span></p> */}
             <div className="Jan">
-              <p className="">Intermediate</p>
-              <p className="">{app.time}</p>
-              <p className="">{app.hour}</p>
+              <p className="landL">{app.price}</p>
+              {/* <p className="landL1">{app.time}</p> */}
+              <p className="landL2">{app.button}</p>
             </div>
 
           </div>
@@ -98,7 +99,7 @@ const Home = () => {
                 </div>
                 <div className="hands5">
                 <div className='iconDivN'><FontAwesomeIcon icon={faWandMagicSparkles}  className="iconDiv divLip"/></div>
-                  <p className="">Run Live Applications In Your Browser</p>
+                  <p className="hands4">Run Live Applications In Your Browser</p>
                 </div>
               </div>
                </div>
@@ -113,7 +114,7 @@ const Home = () => {
 
  <div className="projectPreviewDiv1">
         <div className="tou">
-        <div className="TrendingCourses">Courses </div>
+        <div className="TrendingCourses"> Popular Courses </div>
         <div className="MostPopular">
         <p className="Checkout">Check out the most popular courses from our expert authors. </p>
         <div className="viewMoreButton">view more</div>
@@ -123,12 +124,13 @@ const Home = () => {
         <div className="filesVideo">
           {card1.map((app,id)=>(
           <div className="cardDivWithImg imgWidth" key={id}>
-           <div className="ImgDivGenerator imgHeight"> <img src="/img/bkm.png" alt="" className="divImg"/></div>
+           <div className="ImgDivGenerator imgHeight"> <img src={app.img} alt="" className="divImg"/></div>
+           <p className='skillPath'>SKILL PATH</p>
             <p className="WhatIs">{app.course}</p>
-            <p className="">by {app.name}</p>
+            {/* <p className="">by {app.name}</p> */}
             <div className="Jan janu">
-              <p className="">Intermediate</p>
-              <p className="">1h 18m</p>
+              <p className="landL">{app.price}</p>
+              <p className="landL2">{app.button}</p>
             </div>
 
           </div>
@@ -150,15 +152,23 @@ const Home = () => {
         
           <div className="cardDivWithImg">
            <div className="ImgDivGenerator"> <img src="/img/bkm.png" alt="" className="divImg"/></div>
+             <p className='skillPath'>PROJECT PATH</p>
             <p className="WhatIs">Ecommerce Project</p>
-            <p className="">by Chukwubuike Kingsley</p>
+              <div className="Jan janu">
+              <p className="landL">$100</p>
+              <p className="landL2">Preview</p>
+            </div>
            
 
           </div>
            <div className="cardDivWithImg">
            <div className="ImgDivGenerator"> <img src="/img/bkm.png" alt="" className="divImg"/></div>
+             <p className='skillPath'>PROJECT PATH</p>
             <p className="WhatIs">Simple Sales Store</p>
-            <p className="">by Chukwubuike Kingsley</p>
+             <div className="Jan janu">
+              <p className="landL">$40</p>
+              <p className="landL2">Preview</p>
+            </div>
            
 
           </div>
@@ -179,8 +189,12 @@ const Home = () => {
           {card2.map((app,id)=>(
           <div className="cardDivWithImg" key={id}>
            <div className="ImgDivGenerator"> <img src="/img/bkm.png" alt="" className="divImg"/></div>
+             <p className='skillPath'>PROJECT PATH</p>
             <p className="WhatIs">{app.project}</p>
-            <p className="">by {app.name}</p>
+             <div className="Jan janu">
+              <p className="landL">{app.price}</p>
+              <p className="landL2">{app.button}</p>
+            </div>
           
 
           </div>

@@ -37,10 +37,10 @@ const footer = () => {
                 </div>
             </div>
         </div>
-        <div>
+        <div className='MobileT12'>
             <div className='MobileT1'>
                 <div className='MobileT'>
-                    <a href="#" className='mnm'> Home </a>
+                    <a href="/" className='mnm'> Home </a>
                     <a href="#" className='mnm'> Contact </a>
                     <a href="#" className='mnm'> Support </a>
                 </div>

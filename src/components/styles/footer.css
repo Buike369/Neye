@@ -109,7 +109,9 @@
 .iconHoverColor{
  color:#f9f5f5 !important;
 }
-
+.hot li {
+    color:#fff !important;
+}
 .iconHoverColor:hover {
     /* color: gray; */
     cursor: pointer;
@@ -142,7 +144,7 @@
     width:100%;
     max-width: 500px;
     margin: 0 auto;
-    padding: 5px 10px;
+    padding: 5px 20px;
 }
 .mnm{
     color:#7e799f;

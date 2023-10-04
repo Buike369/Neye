@@ -10,6 +10,9 @@ import {
 import Navbar from "./components/pages/navbar"
 import Footer from "./components/pages/footer"
 import Home from "./components/pages/home"
+import Card from "./components/pages/cards"
+import Login from "./components/pages/login"
+import Register from "./components/pages/register"
 
 
 import { ThemeProvider} from "./components/pages/ThemeContext"
@@ -36,9 +39,21 @@ const router = createBrowserRouter([
         element: <Home />
 
 
+      }, {
+        path: "/road",
+        element: <Card />
+
+
       }
      
     ]
+  },{
+    path: "/login",
+    element: <Login />
+  }
+  , {
+    path: "/register",
+    element: <Register/>
   }
  
 ]);
